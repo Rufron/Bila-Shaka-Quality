@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:QR-{YYYY}-{#####}",
+ "creation": "2026-10-07 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "source_section",
+  "bucket_code",
+  "greenhouse",
+  "harvester",
+  "harvest_timestamp",
+  "processing_section",
+  "inspection_station",
+  "total_stems_received",
+  "processing_col_break",
+  "accepted_stems",
+  "rejected_stems",
+  "overall_status",
+  "rejection_section",
+  "rejections",
+  "output_section",
+  "output_bunch_batch",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "source_section",
+   "fieldtype": "Section Break",
+   "label": "Bucket & Source"
+  },
+  {
+   "fieldname": "bucket_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Bucket Code",
+   "options": "Bucket Traceability",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "greenhouse",
+   "fieldtype": "Link",
+   "label": "Source Greenhouse / Block",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "harvester",
+   "fieldtype": "Link",
+   "label": "Harvester",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "harvest_timestamp",
+   "fieldtype": "Datetime",
+   "label": "Harvest Timestamp",
+   "read_only": 1
+  },
+  {
+   "fieldname": "processing_section",
+   "fieldtype": "Section Break",
+   "label": "Processing Details"
+  },
+  {
+   "fieldname": "inspection_station",
+   "fieldtype": "Data",
+   "label": "Inspection Station / Table"
+  },
+  {
+   "fieldname": "total_stems_received",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Stems Received",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "processing_col_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Total Stems Received − Rejected Stems",
+   "fieldname": "accepted_stems",
+   "fieldtype": "Int",
+   "label": "Accepted Stems",
+   "read_only": 1
+  },
+  {
+   "description": "Sum of the rejection breakdown rows",
+   "fieldname": "rejected_stems",
+   "fieldtype": "Int",
+   "label": "Rejected Stems",
+   "read_only": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "overall_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Overall Status",
+   "options": "Draft\nPassed\nPartial Reject\nRejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rejection_section",
+   "fieldtype": "Section Break",
+   "label": "Rejection Breakdown"
+  },
+  {
+   "fieldname": "rejections",
+   "fieldtype": "Table",
+   "label": "Rejections",
+   "options": "Quality Reporting Rejection Item"
+  },
+  {
+   "fieldname": "output_section",
+   "fieldtype": "Section Break",
+   "label": "Output Traceability"
+  },
+  {
+   "fieldname": "output_bunch_batch",
+   "fieldtype": "Link",
+   "label": "Output Bunch Batch",
+   "options": "Batch"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Quality Reporting",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Bila Shaka Quality",
+ "name": "Quality Reporting",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Quality Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
