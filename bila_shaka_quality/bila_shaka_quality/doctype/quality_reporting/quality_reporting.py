@@ -29,6 +29,7 @@ class QualityReporting(Document):
 		accepted_stems: DF.Int
 		amended_from: DF.Link | None
 		bucket_code: DF.Link
+		control_point: DF.Link
 		greenhouse: DF.Link | None
 		harvest_timestamp: DF.Datetime | None
 		harvester: DF.Link | None
